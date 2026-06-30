@@ -7,6 +7,7 @@ var mainWindow = null;
 
 // Require and setup each JS file in the main-process dir
 glob('main-process/**/*.js', function (error, files) {
+    console.log('Loading main-process files...');
   if (error) return console.log(error);
 });
 
