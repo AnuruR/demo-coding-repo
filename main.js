@@ -1,15 +1,14 @@
 var app = require('app');
 var BrowserWindow = require('browser-window');
 var glob = require('glob');
+var msg = string => console.log(string);
 
 var mainWindow = null;
 
 // Require and setup each JS file in the main-process dir
 glob('main-process/**/*.js', function (error, files) {
+    console.log('Loading main-process files...');
   if (error) return console.log(error);
-  files.forEach(function (file) {
-    require('./' + file).setup();
-  });
 });
 
 function createWindow () {
